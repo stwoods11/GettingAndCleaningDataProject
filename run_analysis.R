@@ -10,8 +10,8 @@ run_analysis <- function () {
     
     # Download and unzip the data into the working directory.  This can be commented out after run once for efficiency.
     message("Downloading and unpackaging data ...")
-    #download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip", "getdata_projectfiles_UCI HAR Dataset.zip")
-    #unzip("getdata_projectfiles_UCI HAR Dataset.zip")
+    download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip", "getdata_projectfiles_UCI HAR Dataset.zip")
+    unzip("getdata_projectfiles_UCI HAR Dataset.zip")
 
     # Read the training and test data from files into tables.
     message("Reading and merging data ...")
@@ -73,7 +73,7 @@ run_analysis <- function () {
     
     # Write output files in text and csv formats.
     write.table(tidy_data, "tidy_data.txt", row.names = FALSE)
-    write.table(tidy_data, "tidy_data.csv", row.names = FALSE, sep = ",")
+    write.table(tidy_data, "tidy_data.csv.txt", row.names = FALSE, sep = ",")
 
     tidy_data
 }
